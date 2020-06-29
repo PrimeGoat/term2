@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>All Stocks</h1>
+
+	<% if(stocks) { stocks.forEach(foundStock => { %>
+		<div> <a href="/stocks/update-stock/<%=foundStock._id%>"><%=foundStock.name%></a></div>
+	<% });} %>
+
+</body>
+</html>

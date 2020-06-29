@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>EJS Test</title>
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+	<body>
+		<%- include('./partials/header.ejs')%>
+		<img src="images/deadcop.jpg" width=300>
+		<ul>
+			<% places.forEach(item => { %>
+				<li> <%= item.city %>, <%= item.city %>  </li>
+			<% }) %>
+		</ul>
+	</body>
+</html>
+
+

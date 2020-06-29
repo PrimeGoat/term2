@@ -1,0 +1,8 @@
+mkdir express-nodb ; cd express-nodb
+npm init
+npm i express dotenv
+npm i -g nodemon
+
+touch .gitignore
+touch .env
+touch index.js

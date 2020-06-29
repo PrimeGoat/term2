@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div style="border: 1px solid black; padding: 10px;">
+		<h2><%= word.word %></h2>
+		<p><%= word.meaning %></p>
+	</div>
+
+	<div style="
+	margin-bottom: 3em;
+	background: lightyellow;
+	margin-top: 3em;
+	padding: 20px;
+	">
+		<p>Add Comment</p>
+		<form action="/comments/add-comment/<%=word.word%>" method="POST">
+			<div>
+				<label for="comment">Comment:</label>
+				<textarea
+					type="text"
+					id="comment"
+					name="comment"
+					cols="30"
+					rows="10"
+				></textarea>
+				<br><br>
+			</div>
+			<button type="submit">Add Comment:</button>
+		</form>
+	</div>
+
+	<div>
+		<% if (word.comments.length) {%>
+		<h3>Comments:</h3>
+		<% word.comments.forEach((word)=>{%>
+		<hr />
+		<p>
+		<strong>Comment:</strong>
+		<span style="font-style: italic; font-size: 1.2em;"
+			><%= word.comment%></span
+		>
+		</p>
+		<p><strong>Date:</strong> <%= word.timestamp %></p>
+		<% })} %>
+	</div></body>
+</html>

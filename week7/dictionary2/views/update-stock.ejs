@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Update Stock</title>
+</head>
+<body>
+	<div>
+	<% if(stocks) { %>
+	<form action="/stocks/update-stock/<%=stocks._id%>?_method=PUT" method="POST">
+		<div>
+			<label for="name">Stock:</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				placeholder=<%=stocks.name%>
+		/>
+		</div>
+		<div>
+			<label for="symbol">Symbol:</label>
+			<input
+				type="text"
+				id="symbol"
+				name="symbol"
+				placeholder=<%=stocks.symbol%>
+			/>
+		</div>
+		<div>
+			<label for="price">Price:</label>
+			<input
+				type="text"
+				id="price"
+				name="price"
+				placeholder=<%=stocks.price%>
+			/>
+		</div>
+		<button type="submit">Update Stock</button>
+	</form>
+	<% } %>
+	</div>
+</body>
+</html>
